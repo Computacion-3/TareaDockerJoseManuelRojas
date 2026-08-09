@@ -1,0 +1,164 @@
+﻿[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< com.icesi.fit:icesi-fit >-----------------------
+[INFO] Building Icesi Fit 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ war ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.4.4:run (default-cli) > test-compile @ icesi-fit >>>
+[INFO] 
+[INFO] --- jacoco:0.8.12:prepare-agent (default) @ icesi-fit ---
+[INFO] argLine set to -javaagent:C:\\Users\\Daniel\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.12\\org.jacoco.agent-0.8.12-runtime.jar=destfile=C:\\Users\\Daniel\\Desktop\\ProyectoComp2-Gym\\GymApp\\target\\jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ icesi-fit ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ icesi-fit ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ icesi-fit ---
+[INFO] skip non existing resourceDirectory C:\Users\Daniel\Desktop\ProyectoComp2-Gym\GymApp\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ icesi-fit ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< spring-boot:3.4.4:run (default-cli) < test-compile @ icesi-fit <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.4.4:run (default-cli) @ icesi-fit ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.4)
+
+2026-03-22T18:36:58.476-05:00  INFO 25252 --- [icesi-fit] [           main] com.icesi.fit.IcesiFitApplication        : Starting IcesiFitApplication using Java 17.0.18 with PID 25252 (C:\Users\Daniel\Desktop\ProyectoComp2-Gym\GymApp\target\classes started by Daniel in C:\Users\Daniel\Desktop\ProyectoComp2-Gym\GymApp)
+2026-03-22T18:36:58.478-05:00  INFO 25252 --- [icesi-fit] [           main] com.icesi.fit.IcesiFitApplication        : No active profile set, falling back to 1 default profile: "default"
+2026-03-22T18:36:58.741-05:00  INFO 25252 --- [icesi-fit] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-22T18:36:58.780-05:00  INFO 25252 --- [icesi-fit] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 35 ms. Found 11 JPA repository interfaces.
+2026-03-22T18:36:59.002-05:00  INFO 25252 --- [icesi-fit] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-03-22T18:36:59.008-05:00  INFO 25252 --- [icesi-fit] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-22T18:36:59.008-05:00  INFO 25252 --- [icesi-fit] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2026-03-22T18:36:59.030-05:00  INFO 25252 --- [icesi-fit] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-03-22T18:36:59.031-05:00  INFO 25252 --- [icesi-fit] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 534 ms
+2026-03-22T18:36:59.087-05:00  INFO 25252 --- [icesi-fit] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-22T18:36:59.106-05:00  INFO 25252 --- [icesi-fit] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.11.Final
+2026-03-22T18:36:59.119-05:00  INFO 25252 --- [icesi-fit] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-03-22T18:36:59.230-05:00  INFO 25252 --- [icesi-fit] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-22T18:36:59.241-05:00  INFO 25252 --- [icesi-fit] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-22T18:36:59.315-05:00  INFO 25252 --- [icesi-fit] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:icesifit user=SA
+2026-03-22T18:36:59.316-05:00  INFO 25252 --- [icesi-fit] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-22T18:36:59.326-05:00  WARN 25252 --- [icesi-fit] [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-22T18:36:59.335-05:00  INFO 25252 --- [icesi-fit] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-22T18:36:59.757-05:00  INFO 25252 --- [icesi-fit] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: drop table if exists ejercicio cascade 
+Hibernate: drop table if exists evento cascade 
+Hibernate: drop table if exists notificacion cascade 
+Hibernate: drop table if exists permiso cascade 
+Hibernate: drop table if exists progreso cascade 
+Hibernate: drop table if exists recomendacion cascade 
+Hibernate: drop table if exists rol cascade 
+Hibernate: drop table if exists rol_permiso cascade 
+Hibernate: drop table if exists rutina cascade 
+Hibernate: drop table if exists rutina_ejercicio cascade 
+Hibernate: drop table if exists usuario cascade 
+Hibernate: drop table if exists usuario_evento cascade 
+Hibernate: create table ejercicio (duracion_minutos integer, id_ejercicio bigint generated by default as identity, dificultad varchar(50), descripcion varchar(500), nombre varchar(255) not null, url_video varchar(255), tipo enum ('CARDIO','FUERZA','MOVILIDAD') not null, primary key (id_ejercicio))
+Hibernate: create table evento (fecha_hora timestamp(6) not null, id_administrador bigint not null, id_evento bigint generated by default as identity, descripcion varchar(500), lugar varchar(255) not null, nombre varchar(255) not null, primary key (id_evento))
+Hibernate: create table notificacion (leido boolean not null, fecha_envio timestamp(6) not null, id_emisor bigint not null, id_notificacion bigint generated by default as identity, id_receptor bigint not null, contenido varchar(500) not null, tipo enum ('EVENTO','GENERAL','PROGRESO','RECORDATORIO') not null, primary key (id_notificacion))
+Hibernate: create table permiso (id_permiso bigint generated by default as identity, nombre varchar(100) not null unique, descripcion varchar(255), primary key (id_permiso))
+Hibernate: create table progreso (fecha date not null, nivel_esfuerzo integer, repeticiones_realizadas integer, tiempo_realizado_minutos integer, id_progreso bigint generated by default as identity, id_usuario bigint not null, primary key (id_progreso))
+Hibernate: create table recomendacion (fecha date not null, id_entrenador bigint not null, id_recomendacion bigint generated by default as identity, id_usuario_asignado bigint not null, mensaje varchar(1000) not null, primary key (id_recomendacion))
+Hibernate: create table rol (id_rol bigint generated by default as identity, nombre varchar(50) not null unique, descripcion varchar(255), primary key (id_rol))
+Hibernate: create table rol_permiso (id_permiso bigint not null, id_rol bigint not null)
+Hibernate: create table rutina (es_predisenada boolean not null, id_creador bigint not null, id_rutina bigint generated by default as identity, nombre varchar(255) not null, primary key (id_rutina))
+Hibernate: create table rutina_ejercicio (repeticiones_sugeridas integer not null, series integer not null, id_ejercicio bigint not null, id_rutina bigint not null, primary key (id_ejercicio, id_rutina))
+Hibernate: create table usuario (id_entrenador_asignado bigint, id_rol bigint not null, id_usuario bigint generated by default as identity, correo_institucional varchar(255) not null unique, nombre varchar(255) not null, primary key (id_usuario))
+Hibernate: create table usuario_evento (fecha_inscripcion timestamp(6) not null, id_evento bigint not null, id_usuario bigint not null, primary key (id_evento, id_usuario))
+Hibernate: alter table if exists evento add constraint FK6b11jmsqes0t6afkkyd8uoroj foreign key (id_administrador) references usuario
+Hibernate: alter table if exists notificacion add constraint FK6qchjmqokf69t2j4lh3j7v45p foreign key (id_emisor) references usuario
+Hibernate: alter table if exists notificacion add constraint FKrbca68k5sfeswgh9s663aewp0 foreign key (id_receptor) references usuario
+Hibernate: alter table if exists progreso add constraint FKhjg9krbn13hhlorpn8i8cvity foreign key (id_usuario) references usuario
+Hibernate: alter table if exists recomendacion add constraint FK8h2tdv825e3wajb31y7qtj9os foreign key (id_entrenador) references usuario
+Hibernate: alter table if exists recomendacion add constraint FK8vdytqh7vt97ikt9vghno8q2x foreign key (id_usuario_asignado) references usuario
+Hibernate: alter table if exists rol_permiso add constraint FKrhxhgw05bdvokfrpppumlfh5d foreign key (id_permiso) references permiso
+Hibernate: alter table if exists rol_permiso add constraint FKsxc3d8lmtj7em6n8j0wl4jwco foreign key (id_rol) references rol
+Hibernate: alter table if exists rutina add constraint FK40ms5luoi4t8pw2ehmk7re4f8 foreign key (id_creador) references usuario
+Hibernate: alter table if exists rutina_ejercicio add constraint FKl5sn6h67cl8dae2ff8a9m5eqd foreign key (id_ejercicio) references ejercicio
+Hibernate: alter table if exists rutina_ejercicio add constraint FKp3pwmcjo7gjcgupm9nw8eiil foreign key (id_rutina) references rutina
+Hibernate: alter table if exists usuario add constraint FK7uuimiimlav8q0r7xillr561j foreign key (id_entrenador_asignado) references usuario
+Hibernate: alter table if exists usuario add constraint FKmyv3138vvci6kaq3y5kt4cntu foreign key (id_rol) references rol
+Hibernate: alter table if exists usuario_evento add constraint FKb9ywynt8kpek5obf66ebmu52n foreign key (id_evento) references evento
+Hibernate: alter table if exists usuario_evento add constraint FK71gvh99nhy6917coff7pj4tp4 foreign key (id_usuario) references usuario
+Hibernate: INSERT INTO permiso (nombre, descripcion) VALUES ('GESTIONAR_ENTRENADORES', 'Permite gestionar la lista de entrenadores')
+Hibernate: INSERT INTO permiso (nombre, descripcion) VALUES ('GESTIONAR_BASE_DATOS', 'Permite gestionar la base de datos del sistema')
+Hibernate: INSERT INTO permiso (nombre, descripcion) VALUES ('GESTIONAR_EVENTOS', 'Permite crear y administrar eventos deportivos')
+Hibernate: INSERT INTO permiso (nombre, descripcion) VALUES ('VER_PROGRESO_ASIGNADOS', 'Permite ver el progreso de los usuarios asignados')
+Hibernate: INSERT INTO permiso (nombre, descripcion) VALUES ('CREAR_RUTINA', 'Permite crear rutinas de ejercicios')
+Hibernate: INSERT INTO permiso (nombre, descripcion) VALUES ('ENVIAR_RECOMENDACION', 'Permite enviar recomendaciones a usuarios asignados')
+Hibernate: INSERT INTO permiso (nombre, descripcion) VALUES ('VER_PROGRESO_PROPIO', 'Permite ver el progreso propio del estudiante')
+Hibernate: INSERT INTO permiso (nombre, descripcion) VALUES ('REGISTRAR_PROGRESO', 'Permite registrar progreso de ejercicios')
+Hibernate: INSERT INTO permiso (nombre, descripcion) VALUES ('INSCRIBIRSE_EVENTO', 'Permite inscribirse en eventos deportivos')
+Hibernate: INSERT INTO rol (nombre, descripcion) VALUES ('ADMIN', 'Administrador del sistema con acceso completo')
+Hibernate: INSERT INTO rol (nombre, descripcion) VALUES ('ENTRENADOR', 'Entrenador asignado a estudiantes')
+Hibernate: INSERT INTO rol (nombre, descripcion) VALUES ('ESTUDIANTE', 'Estudiante que realiza actividades fisicas')
+Hibernate: INSERT INTO rol_permiso (id_rol, id_permiso) VALUES (1, 1)
+Hibernate: INSERT INTO rol_permiso (id_rol, id_permiso) VALUES (1, 2)
+Hibernate: INSERT INTO rol_permiso (id_rol, id_permiso) VALUES (1, 3)
+Hibernate: INSERT INTO rol_permiso (id_rol, id_permiso) VALUES (2, 4)
+Hibernate: INSERT INTO rol_permiso (id_rol, id_permiso) VALUES (2, 5)
+Hibernate: INSERT INTO rol_permiso (id_rol, id_permiso) VALUES (2, 6)
+Hibernate: INSERT INTO rol_permiso (id_rol, id_permiso) VALUES (3, 7)
+Hibernate: INSERT INTO rol_permiso (id_rol, id_permiso) VALUES (3, 8)
+Hibernate: INSERT INTO rol_permiso (id_rol, id_permiso) VALUES (3, 9)
+Hibernate: INSERT INTO usuario (correo_institucional, nombre, id_rol) VALUES ('admin@icesi.edu.co', 'Carlos Admin', 1)
+Hibernate: INSERT INTO usuario (correo_institucional, nombre, id_rol) VALUES ('entrenador1@icesi.edu.co', 'Laura Entrenadora', 2)
+Hibernate: INSERT INTO usuario (correo_institucional, nombre, id_rol) VALUES ('entrenador2@icesi.edu.co', 'Miguel Entrenador', 2)
+Hibernate: INSERT INTO usuario (correo_institucional, nombre, id_rol, id_entrenador_asignado) VALUES ('estudiante1@icesi.edu.co', 'Ana Estudiante', 3, 2)
+Hibernate: INSERT INTO usuario (correo_institucional, nombre, id_rol, id_entrenador_asignado) VALUES ('estudiante2@icesi.edu.co', 'Pedro Estudiante', 3, 2)
+Hibernate: INSERT INTO usuario (correo_institucional, nombre, id_rol, id_entrenador_asignado) VALUES ('estudiante3@icesi.edu.co', 'Maria Estudiante', 3, 3)
+Hibernate: INSERT INTO ejercicio (nombre, tipo, descripcion, duracion_minutos, dificultad, url_video) VALUES ('Sentadillas', 'FUERZA', 'Ejercicio de fuerza para piernas y gluteos', 15, 'MEDIO', 'https://example.com/sentadillas')
+Hibernate: INSERT INTO ejercicio (nombre, tipo, descripcion, duracion_minutos, dificultad, url_video) VALUES ('Correr en cinta', 'CARDIO', 'Ejercicio cardiovascular en cinta de correr', 30, 'FACIL', 'https://example.com/cinta')
+Hibernate: INSERT INTO ejercicio (nombre, tipo, descripcion, duracion_minutos, dificultad, url_video) VALUES ('Peso muerto', 'FUERZA', 'Ejercicio compuesto de fuerza para espalda y piernas', 20, 'DIFICIL', 'https://example.com/peso-muerto')
+Hibernate: INSERT INTO ejercicio (nombre, tipo, descripcion, duracion_minutos, dificultad, url_video) VALUES ('Yoga basico', 'MOVILIDAD', 'Rutina de yoga para movilidad y flexibilidad', 45, 'FACIL', 'https://example.com/yoga')
+Hibernate: INSERT INTO ejercicio (nombre, tipo, descripcion, duracion_minutos, dificultad, url_video) VALUES ('Burpees', 'CARDIO', 'Ejercicio de alta intensidad para todo el cuerpo', 10, 'DIFICIL', 'https://example.com/burpees')
+Hibernate: INSERT INTO rutina (id_creador, nombre, es_predisenada) VALUES (2, 'Rutina Fuerza Basica', true)
+Hibernate: INSERT INTO rutina (id_creador, nombre, es_predisenada) VALUES (3, 'Rutina Cardio Intenso', true)
+Hibernate: INSERT INTO rutina_ejercicio (id_rutina, id_ejercicio, series, repeticiones_sugeridas) VALUES (1, 1, 4, 12)
+Hibernate: INSERT INTO rutina_ejercicio (id_rutina, id_ejercicio, series, repeticiones_sugeridas) VALUES (1, 3, 3, 8)
+Hibernate: INSERT INTO rutina_ejercicio (id_rutina, id_ejercicio, series, repeticiones_sugeridas) VALUES (2, 2, 1, 1)
+Hibernate: INSERT INTO rutina_ejercicio (id_rutina, id_ejercicio, series, repeticiones_sugeridas) VALUES (2, 5, 5, 10)
+Hibernate: INSERT INTO progreso (id_usuario, fecha, repeticiones_realizadas, tiempo_realizado_minutos, nivel_esfuerzo) VALUES (4, '2026-03-20', 40, 60, 7)
+Hibernate: INSERT INTO progreso (id_usuario, fecha, repeticiones_realizadas, tiempo_realizado_minutos, nivel_esfuerzo) VALUES (4, '2026-03-21', 45, 55, 8)
+Hibernate: INSERT INTO progreso (id_usuario, fecha, repeticiones_realizadas, tiempo_realizado_minutos, nivel_esfuerzo) VALUES (5, '2026-03-20', 30, 45, 6)
+Hibernate: INSERT INTO progreso (id_usuario, fecha, repeticiones_realizadas, tiempo_realizado_minutos, nivel_esfuerzo) VALUES (6, '2026-03-21', 50, 70, 9)
+Hibernate: INSERT INTO evento (nombre, descripcion, fecha_hora, lugar, id_administrador) VALUES ('Jornada Fitness Icesi', 'Gran jornada deportiva abierta a toda la comunidad universitaria', '2026-04-15 08:00:00', 'Gimnasio Principal - Universidad Icesi', 1)
+Hibernate: INSERT INTO usuario_evento (id_usuario, id_evento, fecha_inscripcion) VALUES (4, 1, '2026-03-18 10:00:00')
+Hibernate: INSERT INTO usuario_evento (id_usuario, id_evento, fecha_inscripcion) VALUES (5, 1, '2026-03-19 14:30:00')
+Hibernate: INSERT INTO notificacion (id_emisor, id_receptor, tipo, contenido, leido, fecha_envio) VALUES (2, 4, 'RECORDATORIO', 'Recuerda completar tu rutina de hoy', false, '2026-03-22 08:00:00')
+Hibernate: INSERT INTO notificacion (id_emisor, id_receptor, tipo, contenido, leido, fecha_envio) VALUES (1, 2, 'EVENTO', 'Nuevo evento creado: Jornada Fitness Icesi', true, '2026-03-18 09:00:00')
+Hibernate: INSERT INTO notificacion (id_emisor, id_receptor, tipo, contenido, leido, fecha_envio) VALUES (3, 6, 'PROGRESO', 'Tu progreso de esta semana ha sido excelente', false, '2026-03-22 10:00:00')
+Hibernate: INSERT INTO recomendacion (id_entrenador, id_usuario_asignado, mensaje, fecha) VALUES (2, 4, 'Te recomiendo aumentar las repeticiones de sentadillas gradualmente para mejorar la resistencia', '2026-03-21')
+Hibernate: INSERT INTO recomendacion (id_entrenador, id_usuario_asignado, mensaje, fecha) VALUES (3, 6, 'Incorpora ejercicios de estiramiento antes y despues de cada sesion de cardio', '2026-03-22')
+2026-03-22T18:36:59.797-05:00  INFO 25252 --- [icesi-fit] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-22T18:37:00.023-05:00  WARN 25252 --- [icesi-fit] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-22T18:37:00.128-05:00  INFO 25252 --- [icesi-fit] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:icesifit'
+2026-03-22T18:37:00.151-05:00  INFO 25252 --- [icesi-fit] [           main] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2026-03-22T18:37:00.152-05:00  INFO 25252 --- [icesi-fit] [           main] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@56afbace]]
+2026-03-22T18:37:00.152-05:00  INFO 25252 --- [icesi-fit] [           main] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2026-03-22T18:37:00.163-05:00  INFO 25252 --- [icesi-fit] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-03-22T18:37:00.166-05:00  INFO 25252 --- [icesi-fit] [           main] com.icesi.fit.IcesiFitApplication        : Started IcesiFitApplication in 1.871 seconds (process running for 2.012)
+2026-03-22T18:38:00.163-05:00  INFO 25252 --- [icesi-fit] [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]

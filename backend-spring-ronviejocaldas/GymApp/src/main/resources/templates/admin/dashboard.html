@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="~{fragments/layout :: head('Dashboard Admin - Icesi Fit')}"></head>
+<body>
+<nav th:replace="~{fragments/layout :: navbar}"></nav>
+<div th:replace="~{fragments/layout :: alerts}"></div>
+<div class="container">
+    <h2 class="fw-bold mb-4"><i class="bi bi-speedometer2 me-2"></i>Panel de Administración</h2>
+    <div class="row g-4 mb-4">
+        <div class="col-md-4">
+            <div class="card stat-card bg-primary text-white">
+                <div class="card-body d-flex align-items-center p-4">
+                    <i class="bi bi-people me-3"></i>
+                    <div><h5 class="card-title mb-0" th:text="${totalUsuarios}">0</h5><small>Usuarios registrados</small></div>
+                </div>
+                <div class="card-footer bg-transparent border-0 pb-3">
+                    <a th:href="@{/admin/usuarios}" class="text-white text-decoration-none">Ver usuarios <i class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card stat-card bg-success text-white">
+                <div class="card-body d-flex align-items-center p-4">
+                    <i class="bi bi-shield-lock me-3"></i>
+                    <div><h5 class="card-title mb-0" th:text="${totalRoles}">0</h5><small>Roles definidos</small></div>
+                </div>
+                <div class="card-footer bg-transparent border-0 pb-3">
+                    <a th:href="@{/admin/roles}" class="text-white text-decoration-none">Ver roles <i class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card stat-card bg-info text-white">
+                <div class="card-body d-flex align-items-center p-4">
+                    <i class="bi bi-key me-3"></i>
+                    <div><h5 class="card-title mb-0" th:text="${totalPermisos}">0</h5><small>Permisos configurados</small></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row g-4">
+        <div class="col-md-6">
+            <div class="card"><div class="card-body p-4">
+                <h5 class="card-title"><i class="bi bi-people me-2 text-primary"></i>Gestión de Usuarios</h5>
+                <p class="card-text text-muted">Listar, editar roles y eliminar usuarios del sistema.</p>
+                <a th:href="@{/admin/usuarios}" class="btn btn-outline-primary"><i class="bi bi-arrow-right me-1"></i>Ir a Usuarios</a>
+            </div></div>
+        </div>
+        <div class="col-md-6">
+            <div class="card"><div class="card-body p-4">
+                <h5 class="card-title"><i class="bi bi-shield-lock me-2 text-success"></i>Gestión de Roles</h5>
+                <p class="card-text text-muted">Crear roles, asociar permisos y administrar accesos.</p>
+                <a th:href="@{/admin/roles}" class="btn btn-outline-success"><i class="bi bi-arrow-right me-1"></i>Ir a Roles</a>
+            </div></div>
+        </div>
+    </div>
+</div>
+<div th:replace="~{fragments/layout :: scripts}"></div>
+</body>
+</html>

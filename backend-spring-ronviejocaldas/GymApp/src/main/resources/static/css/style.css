@@ -1,0 +1,119 @@
+/* ==============================================================
+   ICESI FIT - IDENTIDAD INSTITUCIONAL
+   Tipografía principal: Plus Jakarta Sans
+   Colores Principales: Azul (#5454E9), Blanco (#FFFFFF)
+   ============================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+    /* 1. Mapeo de Colores Institucionales a Variables de Bootstrap */
+    --bs-primary: #5454E9;      /* Azul institucional Icesi */
+    --bs-primary-rgb: 84, 84, 233;
+    
+    --bs-success: #4CB979;      /* Verde Icesi */
+    --bs-success-rgb: 76, 185, 121;
+    
+    --bs-warning: #E9683B;      /* Naranja Icesi (Usado para danger/warning en este contexto para mantener la paleta restringida) */
+    --bs-danger: #E9683B;       /* Naranja Icesi reemplaza el rojo genérico */
+    --bs-danger-rgb: 233, 104, 59;
+    
+    --bs-info: #E4EB60;         /* Amarillo Icesi */
+    --bs-secondary: #865CF0;    /* Morado Icesi */
+    
+    /* 2. Escala de grises y texto */
+    --bs-body-color: #000000;         /* Negro - Máximo contraste */
+    --bs-body-bg: #FFFFFF;            /* Off-White puro limpio */
+    --bs-secondary-color: #88898C;    /* Gris 1 - Textos neutros y descriptions */
+    --bs-border-color: #CECFD4;       /* Gris 2 - Bordes suaves y delimitadores */
+
+    /* 3. Tipografía Universal */
+    --bs-body-font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+}
+
+/* Modificadores de la barra de navegación para Azul Icesi */
+.bg-dark {
+    background-color: var(--bs-primary) !important;
+}
+
+/* Sobrescritura de botones para asegurar limpieza y sin sombras agresivas */
+.btn {
+    font-weight: 600;
+    border-radius: 6px;
+    box-shadow: none !important; /* Estilo soberbio */
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-primary {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+    color: #FFFFFF;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: #4242c7;
+    border-color: #4242c7;
+}
+
+/* outline fixes */
+.btn-outline-primary {
+    color: var(--bs-primary);
+    border-color: #CECFD4; /* Borde gris suave en vez del azul estridente, para no saturar */
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+    color: #FFFFFF;
+}
+
+/* Ajustes a Tarjetas (Cards) para un look académico y limpio */
+.card {
+    border: 1px solid var(--bs-border-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04); /* Sombra muy sutil */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Tablas consistentes */
+.table th {
+    background-color: #F8F9FA;
+    color: var(--bs-secondary-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid var(--bs-border-color) !important;
+}
+
+.table td {
+    vertical-align: middle;
+    border-bottom: 1px solid var(--bs-border-color);
+}
+
+/* Formularios claros */
+.form-control, .form-select {
+    border: 1px solid var(--bs-border-color);
+    border-radius: 6px;
+}
+.form-control:focus, .form-select:focus {
+    border-color: var(--bs-primary);
+    box-shadow: 0 0 0 0.2rem rgba(84, 84, 233, 0.15);
+}
+
+.input-group-text {
+    background-color: #F8F9FA;
+    border-color: var(--bs-border-color);
+    color: var(--bs-secondary-color);
+}
+
+/* Badges con background pastel de los colores originales */
+.badge.bg-success {
+    background-color: rgba(76, 185, 121, 0.15) !important;
+    color: #3aa265 !important;
+}
+
+.badge.bg-primary {
+    background-color: rgba(84, 84, 233, 0.15) !important;
+    color: #4242c7 !important;
+}

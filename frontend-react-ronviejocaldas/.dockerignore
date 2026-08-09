@@ -1,0 +1,13 @@
+.git
+.gitignore
+.husky
+node_modules
+dist
+dist-ssr
+*.local
+*.war
+WEB-INF
+.env
+.env.production
+.env.docker
+.eslintcache

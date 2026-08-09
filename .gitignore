@@ -1,0 +1,27 @@
+# Entorno / secretos
+.env
+.env.*
+!.env.example
+
+# Node
+node_modules
+dist
+dist-ssr
+*.local
+
+# Java / Maven
+target
+*.class
+*.log
+
+# IDE
+.vscode
+.idea
+.DS_Store
+*.suo
+
+# Artefactos de despliegue
+*.war
+
+# Video de demostración (42 MB, no es código fuente)
+/backend-spring-ronviejocaldas/DEMOAPP.mp4

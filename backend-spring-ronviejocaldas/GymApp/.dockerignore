@@ -1,0 +1,11 @@
+.git
+.gitignore
+.mvn
+target
+*.log
+*.pdf
+*.mp4
+*.py
+*.txt
+node_modules
+postman

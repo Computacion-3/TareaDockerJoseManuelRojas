@@ -1,0 +1,348 @@
+{
+  "info": {
+    "_postman_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    "name": "IcesiFit REST API",
+    "description": "Coleccion completa para probar todos los controladores REST de IcesiFit. Ejecutar en orden secuencial con Collection Runner.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:8080", "type": "string" },
+    { "key": "adminEmail", "value": "admin@icesi.edu.co", "type": "string" },
+    { "key": "adminPassword", "value": "admin123", "type": "string" },
+    { "key": "entrenadorEmail", "value": "entrenador1@icesi.edu.co", "type": "string" },
+    { "key": "entrenadorPassword", "value": "admin123", "type": "string" },
+    { "key": "estudianteEmail", "value": "estudiante1@icesi.edu.co", "type": "string" },
+    { "key": "estudiantePassword", "value": "admin123", "type": "string" },
+    { "key": "token", "value": "", "type": "string" },
+    { "key": "newPermisoId", "value": "", "type": "string" },
+    { "key": "newRolId", "value": "", "type": "string" },
+    { "key": "newUsuarioId", "value": "", "type": "string" },
+    { "key": "newEjercicioId", "value": "", "type": "string" },
+    { "key": "newRutinaId", "value": "", "type": "string" },
+    { "key": "newProgresoId", "value": "", "type": "string" },
+    { "key": "newRecomendacionId", "value": "", "type": "string" }
+  ],
+  "item": [
+    {
+      "name": "0. Autenticacion",
+      "item": [
+        {
+          "name": "Login Admin",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status 200 OK', function () { pm.response.to.have.status(200); });",
+                  "var json = pm.response.json();",
+                  "pm.test('Token received', function () { pm.expect(json.token).to.be.a('string'); });",
+                  "pm.environment.set('token', json.token);"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "auth": { "type": "noauth" },
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": { "mode": "raw", "raw": "{\"correoInstitucional\": \"{{adminEmail}}\", \"password\": \"{{adminPassword}}\"}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "{{baseUrl}}/api/auth/login", "host": ["{{baseUrl}}"], "path": ["api", "auth", "login"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "1. Permisos",
+      "item": [
+        {
+          "name": "GET All Permisos",
+          "event": [ { "listen": "test", "script": { "exec": ["pm.test('Status 200 OK', function () { pm.response.to.have.status(200); });"], "type": "text/javascript" } } ],
+          "request": { "method": "GET", "header": [], "url": { "raw": "{{baseUrl}}/api/permisos", "host": ["{{baseUrl}}"], "path": ["api", "permisos"] } }
+        },
+        {
+          "name": "POST Create Permiso",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status 201 Created', function () { pm.response.to.have.status(201); });",
+                  "var json = pm.response.json();",
+                  "pm.test('Has ID', function () { pm.expect(json.id).to.be.a('number'); });",
+                  "pm.environment.set('newPermisoId', json.id.toString());"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": { "mode": "raw", "raw": "{\"nombre\": \"NUEVO_PERMISO\", \"descripcion\": \"Descripcion del nuevo permiso\"}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "{{baseUrl}}/api/permisos", "host": ["{{baseUrl}}"], "path": ["api", "permisos"] }
+          }
+        },
+        {
+          "name": "DELETE Permiso",
+          "event": [ { "listen": "test", "script": { "exec": ["pm.test('Status 204 No Content', function () { pm.response.to.have.status(204); });"], "type": "text/javascript" } } ],
+          "request": { "method": "DELETE", "header": [], "url": { "raw": "{{baseUrl}}/api/permisos/{{newPermisoId}}", "host": ["{{baseUrl}}"], "path": ["api", "permisos", "{{newPermisoId}}"] } }
+        }
+      ]
+    },
+    {
+      "name": "2. Roles",
+      "item": [
+        {
+          "name": "GET All Roles",
+          "event": [ { "listen": "test", "script": { "exec": ["pm.test('Status 200 OK', function () { pm.response.to.have.status(200); });"], "type": "text/javascript" } } ],
+          "request": { "method": "GET", "header": [], "url": { "raw": "{{baseUrl}}/api/roles", "host": ["{{baseUrl}}"], "path": ["api", "roles"] } }
+        },
+        {
+          "name": "POST Create Rol",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status 201 Created', function () { pm.response.to.have.status(201); });",
+                  "var json = pm.response.json();",
+                  "pm.environment.set('newRolId', json.id.toString());"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": { "mode": "raw", "raw": "{\"nombre\": \"NUEVO_ROL\", \"descripcion\": \"Descripcion del nuevo rol\", \"permisoIds\": [1,2,3]}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "{{baseUrl}}/api/roles", "host": ["{{baseUrl}}"], "path": ["api", "roles"] }
+          }
+        },
+        {
+          "name": "DELETE Rol",
+          "event": [ { "listen": "test", "script": { "exec": ["pm.test('Status 204 No Content', function () { pm.response.to.have.status(204); });"], "type": "text/javascript" } } ],
+          "request": { "method": "DELETE", "header": [], "url": { "raw": "{{baseUrl}}/api/roles/{{newRolId}}", "host": ["{{baseUrl}}"], "path": ["api", "roles", "{{newRolId}}"] } }
+        }
+      ]
+    },
+    {
+      "name": "3. Usuarios",
+      "item": [
+        {
+          "name": "GET All Usuarios",
+          "event": [ { "listen": "test", "script": { "exec": ["pm.test('Status 200 OK', function () { pm.response.to.have.status(200); });"], "type": "text/javascript" } } ],
+          "request": { "method": "GET", "header": [], "url": { "raw": "{{baseUrl}}/api/usuarios", "host": ["{{baseUrl}}"], "path": ["api", "usuarios"] } }
+        },
+        {
+          "name": "POST Create Usuario",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status 201 Created', function () { pm.response.to.have.status(201); });",
+                  "var json = pm.response.json();",
+                  "pm.environment.set('newUsuarioId', json.id.toString());"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": { "mode": "raw", "raw": "{\"correoInstitucional\": \"nuevo.usuario@icesi.edu.co\", \"nombre\": \"Nuevo Usuario\", \"password\": \"password123\", \"rolId\": 3}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "{{baseUrl}}/api/usuarios", "host": ["{{baseUrl}}"], "path": ["api", "usuarios"] }
+          }
+        },
+        {
+          "name": "DELETE Usuario",
+          "event": [ { "listen": "test", "script": { "exec": ["pm.test('Status 204 No Content', function () { pm.response.to.have.status(204); });"], "type": "text/javascript" } } ],
+          "request": { "method": "DELETE", "header": [], "url": { "raw": "{{baseUrl}}/api/usuarios/{{newUsuarioId}}", "host": ["{{baseUrl}}"], "path": ["api", "usuarios", "{{newUsuarioId}}"] } }
+        }
+      ]
+    },
+    {
+      "name": "4. Ejercicios",
+      "item": [
+        {
+          "name": "GET All Ejercicios",
+          "event": [ { "listen": "test", "script": { "exec": ["pm.test('Status 200 OK', function () { pm.response.to.have.status(200); });"], "type": "text/javascript" } } ],
+          "request": { "method": "GET", "header": [], "url": { "raw": "{{baseUrl}}/api/ejercicios", "host": ["{{baseUrl}}"], "path": ["api", "ejercicios"] } }
+        },
+        {
+          "name": "POST Create Ejercicio",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status 201 Created', function () { pm.response.to.have.status(201); });",
+                  "var json = pm.response.json();",
+                  "pm.environment.set('newEjercicioId', json.id.toString());"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": { "mode": "raw", "raw": "{\"nombre\": \"Nuevo Ejercicio\", \"tipo\": \"FUERZA\", \"descripcion\": \"Descripcion\", \"duracionMinutos\": 20, \"dificultad\": \"FACIL\"}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "{{baseUrl}}/api/ejercicios", "host": ["{{baseUrl}}"], "path": ["api", "ejercicios"] }
+          }
+        },
+        {
+          "name": "DELETE Ejercicio",
+          "event": [ { "listen": "test", "script": { "exec": ["pm.test('Status 204 No Content', function () { pm.response.to.have.status(204); });"], "type": "text/javascript" } } ],
+          "request": { "method": "DELETE", "header": [], "url": { "raw": "{{baseUrl}}/api/ejercicios/{{newEjercicioId}}", "host": ["{{baseUrl}}"], "path": ["api", "ejercicios", "{{newEjercicioId}}"] } }
+        }
+      ]
+    },
+    {
+      "name": "5. Rutinas",
+      "item": [
+        {
+          "name": "GET All Rutinas",
+          "event": [ { "listen": "test", "script": { "exec": ["pm.test('Status 200 OK', function () { pm.response.to.have.status(200); });"], "type": "text/javascript" } } ],
+          "request": { "method": "GET", "header": [], "url": { "raw": "{{baseUrl}}/api/rutinas", "host": ["{{baseUrl}}"], "path": ["api", "rutinas"] } }
+        },
+        {
+          "name": "POST Create Rutina",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status 201 Created', function () { pm.response.to.have.status(201); });",
+                  "var json = pm.response.json();",
+                  "pm.environment.set('newRutinaId', json.id.toString());"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": { "mode": "raw", "raw": "{\"nombre\": \"Nueva Rutina\", \"esPredisenada\": false, \"creadorId\": 2}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "{{baseUrl}}/api/rutinas", "host": ["{{baseUrl}}"], "path": ["api", "rutinas"] }
+          }
+        },
+        {
+          "name": "DELETE Rutina",
+          "event": [ { "listen": "test", "script": { "exec": ["pm.test('Status 204 No Content', function () { pm.response.to.have.status(204); });"], "type": "text/javascript" } } ],
+          "request": { "method": "DELETE", "header": [], "url": { "raw": "{{baseUrl}}/api/rutinas/{{newRutinaId}}", "host": ["{{baseUrl}}"], "path": ["api", "rutinas", "{{newRutinaId}}"] } }
+        }
+      ]
+    },
+    {
+      "name": "6. Progresos",
+      "item": [
+        {
+          "name": "GET All Progresos",
+          "event": [ { "listen": "test", "script": { "exec": ["pm.test('Status 200 OK', function () { pm.response.to.have.status(200); });"], "type": "text/javascript" } } ],
+          "request": { "method": "GET", "header": [], "url": { "raw": "{{baseUrl}}/api/progresos", "host": ["{{baseUrl}}"], "path": ["api", "progresos"] } }
+        },
+        {
+          "name": "POST Create Progreso",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status 201 Created', function () { pm.response.to.have.status(201); });",
+                  "var json = pm.response.json();",
+                  "pm.environment.set('newProgresoId', json.id.toString());"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": { "mode": "raw", "raw": "{\"usuarioId\": 4, \"fecha\": \"2026-05-09\", \"repeticionesRealizadas\": 10, \"tiempoRealizadoMinutos\": 30, \"nivelEsfuerzo\": 5}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "{{baseUrl}}/api/progresos", "host": ["{{baseUrl}}"], "path": ["api", "progresos"] }
+          }
+        },
+        {
+          "name": "DELETE Progreso",
+          "event": [ { "listen": "test", "script": { "exec": ["pm.test('Status 204 No Content', function () { pm.response.to.have.status(204); });"], "type": "text/javascript" } } ],
+          "request": { "method": "DELETE", "header": [], "url": { "raw": "{{baseUrl}}/api/progresos/{{newProgresoId}}", "host": ["{{baseUrl}}"], "path": ["api", "progresos", "{{newProgresoId}}"] } }
+        }
+      ]
+    },
+    {
+      "name": "7. Recomendaciones",
+      "item": [
+        {
+          "name": "GET All Recomendaciones",
+          "event": [ { "listen": "test", "script": { "exec": ["pm.test('Status 200 OK', function () { pm.response.to.have.status(200); });"], "type": "text/javascript" } } ],
+          "request": { "method": "GET", "header": [], "url": { "raw": "{{baseUrl}}/api/recomendaciones", "host": ["{{baseUrl}}"], "path": ["api", "recomendaciones"] } }
+        },
+        {
+          "name": "POST Create Recomendacion",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status 201 Created', function () { pm.response.to.have.status(201); });",
+                  "var json = pm.response.json();",
+                  "pm.environment.set('newRecomendacionId', json.id.toString());"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": { "mode": "raw", "raw": "{\"entrenadorId\": 2, \"usuarioAsignadoId\": 4, \"mensaje\": \"Mensaje de prueba\", \"fecha\": \"2026-05-09\"}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "{{baseUrl}}/api/recomendaciones", "host": ["{{baseUrl}}"], "path": ["api", "recomendaciones"] }
+          }
+        },
+        {
+          "name": "PUT Update Recomendacion",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status 200 OK', function () { pm.response.to.have.status(200); });",
+                  "var json = pm.response.json();",
+                  "pm.test('Updated', function () { pm.expect(json.mensaje).to.eql('Mensaje actualizado'); });"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": { "mode": "raw", "raw": "{\"id\": {{newRecomendacionId}}, \"entrenadorId\": 2, \"usuarioAsignadoId\": 4, \"mensaje\": \"Mensaje actualizado\", \"fecha\": \"2026-05-10\"}", "options": { "raw": { "language": "json" } } },
+            "url": { "raw": "{{baseUrl}}/api/recomendaciones/{{newRecomendacionId}}", "host": ["{{baseUrl}}"], "path": ["api", "recomendaciones", "{{newRecomendacionId}}"] }
+          }
+        },
+        {
+          "name": "DELETE Recomendacion",
+          "event": [ { "listen": "test", "script": { "exec": ["pm.test('Status 204 No Content', function () { pm.response.to.have.status(204); });"], "type": "text/javascript" } } ],
+          "request": { "method": "DELETE", "header": [], "url": { "raw": "{{baseUrl}}/api/recomendaciones/{{newRecomendacionId}}", "host": ["{{baseUrl}}"], "path": ["api", "recomendaciones", "{{newRecomendacionId}}"] } }
+        }
+      ]
+    }
+  ]
+}

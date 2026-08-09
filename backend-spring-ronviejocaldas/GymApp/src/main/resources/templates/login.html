@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments/layout :: head('Login - Icesi Fit')}"></head>
+
+<body class="d-flex align-items-center bg-body-tertiary" style="min-height: 100vh;">
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body p-5">
+
+                        <div class="text-center mb-4">
+                            <img th:src="@{/images/Logo-Icesi.png}" alt="Logo Icesi" class="mb-3"
+                                style="max-height: 80px;">
+                            <p class="text-muted">Inicia sesión para continuar en Icesi Fit</p>
+                        </div>
+
+                        <!-- Parametros de error o logout enviados por Spring Security -->
+                        <div th:if="${param.error}" class="alert alert-danger py-2">
+                            <i class="bi bi-exclamation-triangle me-1"></i>Credenciales inválidas.
+                        </div>
+                        <div th:if="${param.logout}" class="alert alert-success py-2">
+                            <i class="bi bi-info-circle me-1"></i>Has cerrado sesión correctamente.
+                        </div>
+
+                        <form th:action="@{/login}" method="post">
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Correo Institucional</label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-light"><i class="bi bi-envelope"></i></span>
+                                    <input type="email" name="username" class="form-control"
+                                        placeholder="usuario@icesi.edu.co" required autofocus />
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between">
+                                    <label class="form-label fw-semibold">Contraseña</label>
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-light"><i class="bi bi-lock"></i></span>
+                                    <input type="password" name="password" class="form-control"
+                                        placeholder="Tu contraseña" required />
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary w-100 fw-semibold py-2">
+                                <i class="bi bi-box-arrow-in-right me-1"></i>Entrar
+                            </button>
+                        </form>
+
+                        <hr class="my-4" />
+                        <p class="text-center mb-0 text-muted">¿No tienes cuenta? <a th:href="@{/register}"
+                                class="fw-semibold text-decoration-none text-primary">Regístrate aquí</a></p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div th:replace="~{fragments/layout :: scripts}"></div>
+</body>
+
+</html>
