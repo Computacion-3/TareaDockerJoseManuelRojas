@@ -175,28 +175,4 @@ docker compose down -v
 
 - En desarrollo local sin Docker sigue usando H2 en memoria (sin cambios).
 
----
 
-## Despliegue a GitHub
-
-1. Cree un repositorio en la organización del grupo (en GitHub).
-2. Vincule el repositorio local y suba el código:
-
-```bash
-git init
-git add .
-git commit -m "Migración a Docker y Docker Compose"
-git branch -M main
-git remote add origin git@github.com:<organizacion>/<nombre-repo>.git
-git push -u origin main
-```
-
----
-
-## Integrantes
-
-| Nombre | Correo |
-|--------|--------|
-| Daniel Escobar | <daniellondono2710@gmail.com> |
-| Jose Rojas | <josem.r2026@gmail.com> |
-| Puerre Cuevas | <Pierreandrescue@gmail.com> |
