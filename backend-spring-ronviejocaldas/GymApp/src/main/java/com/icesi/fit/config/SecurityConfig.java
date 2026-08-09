@@ -29,7 +29,7 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/login", "/register", "/css/**", "/images/**").permitAll()
+                        .requestMatchers("/login", "/register", "/css/**", "/images/**", "/ws/**").permitAll()
 
                         // rutas protegidas
                         .requestMatchers("/admin/**").hasRole("ADMIN")
