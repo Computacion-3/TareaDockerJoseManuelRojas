@@ -2,6 +2,9 @@
 .env
 .env.*
 !.env.example
+!.env.production
+# El .env.production del frontend (deploy Tomcat antiguo) no se sube
+/frontend-react-ronviejocaldas/.env.production
 
 # Node
 node_modules
